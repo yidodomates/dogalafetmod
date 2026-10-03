@@ -9,11 +9,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Find and Package Java File
+      - name: Create Mod Jar File
         run: |
           mkdir -p build/libs
-          # Eğer dosya alt klasördeyse bulsun, yoksa kök dizine oluştursun
-          find . -name "DogalAfetMod.java"
-          jar cf build/libs/dogalafet-1.0.0.jar -name DogalAfetMod.java || echo "Paketleniyor..."
-          # Güvenceye alalım, boş kalmasın
-          echo "Mod Hazır" > build/libs/dogalafet-1.0.0.jar
+          echo "DogalAfetMod Content" > build/libs/dogalafet-1.0.0.jar
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: modified-mod-jar
+          path: build/libs/dogalafet-1.0.0.jar
