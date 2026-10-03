@@ -14,10 +14,8 @@ jobs:
           mkdir -p build/libs
           echo "DogalafetMod" > build/libs/dogalafet-1.0.0.jar
 
-      - name: Release Artifact
-        uses: softprops/action-gh-release@v1
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: v1.0.${{ github.run_number }}
-          files: build/libs/dogalafet-1.0.0.jar
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: modified-mod-jar
+          path: build/libs/dogalafet-1.0.0.jar
