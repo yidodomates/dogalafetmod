@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="dogalafetmod"
+version="1.0.0"
+displayName="Dogal Afetler Modu"
+authors="Sen"
+description='''
+Minecraft 1.12.2 / 1.20.1 için Android uyumlu özel doğal afet modu. Her 2 dakikada bir çeşitli afetler üretir ve ekranda geri sayım gösterir.
+'''
